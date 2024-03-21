@@ -1,4 +1,4 @@
- import { Request,Response } from "express"
+import { Request,Response } from "express"
 import { createCategoryServices } from "../services/createCategoryRepository"
  
  export class createCategoryController{
@@ -11,5 +11,6 @@ import { createCategoryServices } from "../services/createCategoryRepository"
         if (result instanceof Error){
             return res.status(400).json(result.message)
         }
+        return res.json(result)
     }
  }
