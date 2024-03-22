@@ -6,7 +6,7 @@ import { routes } from "./routes";
 
 const app = express();
 
-app.use(express.json)
+app.use(express.json())
 
 app.use(routes)
 app.get('/',async(req,res)=>{
@@ -14,7 +14,7 @@ app.get('/',async(req,res)=>{
 })
 Database.initialize()
 	.then(() => {
-		app.listen(3000, () => {
+		app.listen(30001, () => {
 			console.log("App Running");
 		});
 	})
