@@ -8,6 +8,6 @@ export const Database = new DataSource({
 	username: "root",
 	password: "root",
 	database: "code_drops-code",
-	entities: [`${__dirname}/**/migrations/*.{ts,js}`],
-	migrations: [`${__dirname}/**/entities/*.{ts,js}`],
+	entities: [`${__dirname}/**/entities/*.{ts,js}`],
+	migrations: [`${__dirname}/**/migrations/*.{ts,js}`],
 });

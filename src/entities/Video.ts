@@ -1,22 +1,23 @@
-import { Column, CreateDateColumn, Entity, JoinColumn, JoinTable, ManyToOne, PrimaryColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, JoinColumn,  ManyToOne, PrimaryColumn} from "typeorm";
 import { v4 as uuid} from "uuid"
 import { Category } from "./category";
+import 'reflect-metadata'
 
 @Entity("videos")
 export class Video {
 	@PrimaryColumn()
 	id: string;
 
-	@Column()
+	@Column({type:"text"})
 	name: string;
 
-	@Column()
+	@Column({type:"text"})
 	description: string;
     
-    @Column()
+    @Column({type:"numeric"})
     duration:number
     
-    @Column()
+    @Column({type:"text"})
     category_id:string
 
     @ManyToOne(()=>Category, category=>category.video)

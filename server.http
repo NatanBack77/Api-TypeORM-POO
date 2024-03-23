@@ -1,5 +1,5 @@
 
-POST http://localhost:3000/categories
+POST http://localhost:30002/categories
 Content-Type: application/json
 
 {

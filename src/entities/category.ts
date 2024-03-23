@@ -2,15 +2,16 @@ import { Column, CreateDateColumn, Entity, OneToMany, PrimaryColumn } from "type
 import { v4 as uuid} from "uuid"
 import { Video } from "./Video";
 
+
 @Entity("categories")
 export class Category {
 	@PrimaryColumn()
 	id: string;
 
-	@Column()
+	@Column({type:"text"})
 	name: string;
 
-	@Column()
+	@Column({type:"text"})
 	description: string;
 
     @OneToMany(()=>Video, video=>video.category)

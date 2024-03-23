@@ -3,7 +3,7 @@ import { createCategoryServices } from "../services/createCategoryRepository"
  
  export class createCategoryController{
     async handle(req:Request,res:Response){
-        const { name, description}= req.body
+        const { name, description }= req.body
         const service = new createCategoryServices
 
         const result = service.execute({name,description})

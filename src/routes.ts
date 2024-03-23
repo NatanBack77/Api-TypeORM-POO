@@ -1,9 +1,8 @@
 import { Router } from "express";
 import { createCategoryController } from "./controllers/createCategoryController";
 
-const routes = Router()
+const routes = Router();
 
-routes.post("categories", new createCategoryController().handle)
+routes.post("/categories", new createCategoryController().handle);
 
-
-export {routes}
+export { routes };
