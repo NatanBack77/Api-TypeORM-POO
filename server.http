@@ -6,3 +6,13 @@ Content-Type: application/json
     "name":"comédia",
     "description":"filmes que faz ri"
 }
+
+
+###
+
+GET http://localhost:30002/categories/
+
+###
+
+DELETE http://localhost:30002/categories/e05a99df-915f-4f0e-b432-86393deef4c3
+
