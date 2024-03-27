@@ -18,7 +18,7 @@ export class createVideoRepository{
       const repo= Database.getRepository(Video)
       const repoCategory = Database.getRepository(Category)
 
-      if(!(await repoCategory.findOneBy({id:category_id}))){
+      if(!(await repoCategory.findOneBy({}))){
         return new Error("Category does not exists")
       }
      const video = repo.create({name,description,duration,category_id})
