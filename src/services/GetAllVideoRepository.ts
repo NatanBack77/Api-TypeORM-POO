@@ -5,7 +5,7 @@ export class GetAllVideoRepository{
     async execute(){
         const repo= Database.getRepository(Video)
         repo.find(
-            
+         
         )
     }
 }

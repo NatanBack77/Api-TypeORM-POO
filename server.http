@@ -35,8 +35,8 @@ Content-Type: application/json
 { 
   "name":"what if",
   "description":"Eu faço é rir",
-  "cetegory_id":"904cf8c6-eff0-405b-8065-ed31cd97a70f",
-  "duration":2.30
+  "duration":2.30,
+  "category_id":"bccbe201-0011-48fc-ab47-38e11a8bcfb3"
 
    
 }
