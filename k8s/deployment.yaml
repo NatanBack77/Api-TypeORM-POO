@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgre
+spec:
+  selector:
+    matchLabels:
+     app: postgre 
+  template:
+    metadata:
+      labels:
+        app: postgre
+    spec:
+      containers:
+        - name: postgre
+          image: postgres:15.0
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_USER
+              value: "root"
+            - name: POSTGRES_PASSWORD
+              value: "root"
+            - name: POSTGRES_DB
+              value: "code_drops-code"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgre
+spec:
+  selector:
+    app: postgre
+  ports:
+    - port: 54321
+   
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+spec:
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+         containers:
+           - name: web
+             image: natandevback707/api:latest
+             ports:
+               - containerPort: 8080
+             env:
+              - name: POSTGRES_USER
+                value: "root"
+              - name: POSTGRES_PASSWORD
+                value: "root"
+              - name: POSTGRES_DB
+                value: "code_drops-code"
+              - name: POSTGRES_HOST
+                value: postgre
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+ name: web
+spec:
+  selector:
+     app: web
+  ports:
+    - port: 80
+      targetPort: 8080
