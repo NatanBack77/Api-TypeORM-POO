@@ -1,6 +1,7 @@
 import "reflect-metadata";
 import "dotenv/config";
 import { DataSource } from "typeorm";
+
 const host = process.env.POSTGRES_HOST || "localhost";
 export const Database = new DataSource({
 	type: "postgres",

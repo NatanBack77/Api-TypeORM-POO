@@ -4,6 +4,7 @@ import { GetAllCategoryController } from "./controllers/GetAllCategoryController
 import { DeleteCategoryController } from "./controllers/DeleteCategoryController";
 import { updateCategoryController } from "./controllers/updateCategoryController";
 import { createVideoController } from "./controllers/createVideoController";
+import { GetAllVideoController } from "./controllers/GetAllVideoController";
 
 const routes = Router();
 
@@ -13,5 +14,6 @@ routes.delete("/categories/:id",new DeleteCategoryController().handle)
 routes.put("/categories/:id",new updateCategoryController().handle)
 
 routes.post("/videos",new createVideoController().handle)
+routes.get("/videos",new GetAllVideoController().handle)
 
 export { routes };

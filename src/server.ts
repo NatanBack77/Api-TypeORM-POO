@@ -11,7 +11,7 @@ app.use(express.json())
 Database.initialize()
 	.then(() => {
     app.use(routes)
-	app.listen(3000, () => {
+	app.listen(8080, () => {
 			console.log("App Running");
 		});
 	})

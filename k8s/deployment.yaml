@@ -32,7 +32,7 @@ spec:
   selector:
     app: postgre
   ports:
-    - port: 54321
+    - port: 5432
    
 ---
 apiVersion: apps/v1
