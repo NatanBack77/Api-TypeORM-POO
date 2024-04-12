@@ -1,5 +1,5 @@
 
-POST http://localhost:3000/categories
+POST http://localhost:8080/categories
 Content-Type: application/json
 
 {
@@ -10,16 +10,16 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/categories/
+GET http://localhost:8080/categories/
 
 ###
 
-DELETE http://localhost:3000/categories/e05a99df-915f-4f0e-b432-86393deef4c3
+DELETE http://localhost:8080/categories/e05a99df-915f-4f0e-b432-86393deef4c3
 
 ###
 
 
-PUT http://localhost:3000/categories/904cf8c6-eff0-405b-8065-ed31cd97a70f
+PUT http://localhost:8080/categories/904cf8c6-eff0-405b-8065-ed31cd97a70f
 Content-Type: application/json 
 
 {
@@ -29,7 +29,7 @@ Content-Type: application/json
 
 ###
 
-POST  http://localhost:3000/videos
+POST  http://localhost:8080/videos
 Content-Type: application/json 
 
 { 
@@ -43,5 +43,5 @@ Content-Type: application/json
 
 ###
 
-GET  http://localhost:3000/videos
+GET  http://localhost:8080/videos
 

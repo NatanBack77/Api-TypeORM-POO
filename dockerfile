@@ -6,7 +6,7 @@ RUN mkdir /home/node/type
 
 WORKDIR /home/node/type
 
-RUN mkdir /home/node/type/node_modules
+COPY . .
 
 EXPOSE 8080
 
