@@ -11,6 +11,7 @@ spec:
       labels:
         app: postgre
     spec:
+      restartPolicy: Always
       containers:
         - name: postgre
           image: postgres:15.0
@@ -48,6 +49,7 @@ spec:
       labels:
         app: web
     spec:
+         restartPolicy: Always
          containers:
            - name: web
              image: natandevback707/api:latest
