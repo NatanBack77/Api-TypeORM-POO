@@ -10,7 +10,7 @@ import { AlreadExists } from "../helpers/api-errors"
         const result = await service.execute({name,description})
 
         if (result instanceof AlreadExists){
-            return res.status(result.statusCode).json(result.message)
+            result.message
         }
         console.log(result)
         return res.json(result)
