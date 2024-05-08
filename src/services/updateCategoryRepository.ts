@@ -1,5 +1,6 @@
 import { Category } from "../entities/category";
 import { Database } from "../dataSource";
+import { NotExists } from "../helpers/api-errors";
 
 type categoryUpdateRequest = {
 	id: string;
@@ -13,7 +14,7 @@ export class updateCategoryRepository {
 		const category = await repo.findOneBy({ id });
 
 		if (!category) {
-			return new Error("Category does not exists");
+			return new NotExists("Category does not exists");
 		}
 
 		category.name = name ? name : category.name;

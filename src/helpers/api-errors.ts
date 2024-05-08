@@ -11,3 +11,9 @@ export class AlreadExists extends ApiError{
         super(message,409)
     }
 }
+
+export class NotExists extends ApiError {
+    constructor(message:string){
+        super(message, 400)
+    }
+}

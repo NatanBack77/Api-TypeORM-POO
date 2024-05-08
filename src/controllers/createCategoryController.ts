@@ -1,5 +1,6 @@
 import { Request,Response } from "express"
 import { createCategoryServices } from "../services/createCategoryRepository"
+import { AlreadExists } from "../helpers/api-errors"
  
  export class createCategoryController{
     async handle(req:Request,res:Response){
@@ -8,8 +9,8 @@ import { createCategoryServices } from "../services/createCategoryRepository"
 
         const result = await service.execute({name,description})
 
-        if (result instanceof Error){
-            return res.status(400).json(result.message)
+        if (result instanceof AlreadExists){
+            return res.status(result.statusCode).json(result.message)
         }
         console.log(result)
         return res.json(result)

@@ -1,5 +1,6 @@
 import { Category } from "../entities/category";
 import { Database } from "../dataSource";
+import { AlreadExists } from "../helpers/api-errors";
 
 type categoryRequest = {
 	name: string;
@@ -11,7 +12,7 @@ export class createCategoryServices {
 		const repo = Database.getRepository(Category);
 
 		if (await repo.findOneBy({name})) {
-            return new Error("Category Alread Exists")
+            return new AlreadExists("Category Alread Exists")
 		}
 
 		const category = repo.create({

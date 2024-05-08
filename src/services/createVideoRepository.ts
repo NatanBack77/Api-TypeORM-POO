@@ -1,6 +1,7 @@
 import { Database } from "../dataSource";
 import { Category } from "../entities/category";
 import { Video } from "../entities/Video";
+import { AlreadExists, ApiError } from "../helpers/api-errors";
 
 
 type createVideoRequest = {
@@ -21,7 +22,7 @@ export class createVideoRepository {
 		const repoCategory = Database.getRepository(Category);
 
 		if (!(await repoCategory.findOneBy({ id: category_id }))) {
-			return new Error("Category does not exist");
+			return new AlreadExists("Category does not exist")
 		}
 		const video = repo.create({ name, description, duration, category_id });
 		await repo.save(video);

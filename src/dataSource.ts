@@ -5,7 +5,7 @@ import { DataSource } from "typeorm";
 const host = process.env.POSTGRES_HOST || "localhost";
 export const Database = new DataSource({
 	type: "postgres",
-	host: host,
+	host: "localhost",
 	port: 5432,
 	username: process.env.POSTGRES_USER,
 	password: process.env.POSTGRES_USER,
