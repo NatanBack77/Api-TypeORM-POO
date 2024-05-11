@@ -1,9 +1,9 @@
 
-POST http://localhost:8080/categories
+POST http://localhost:3000/categories
 Content-Type: application/json
 
 {
-    "name":"comédia",
+    "name":"comédio",
     "description":"filmes que faz ri"
 }
 

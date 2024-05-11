@@ -12,7 +12,7 @@ export class createCategoryServices {
 		const repo = Database.getRepository(Category);
 
 		if (await repo.findOneBy({name})) {
-            return new AlreadExists("Category Alread Exists")
+            throw new AlreadExists("Category Alread Exists")
 		}
 
 		const category = repo.create({
