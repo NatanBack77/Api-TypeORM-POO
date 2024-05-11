@@ -8,7 +8,7 @@ type categoryRequest = {
 };
 
 export class createCategoryServices {
-	async execute({ name, description }: categoryRequest): Promise<Category | Error> {
+	async execute({ name, description }: categoryRequest): Promise<Category | AlreadExists> {
 		const repo = Database.getRepository(Category);
 
 		if (await repo.findOneBy({name})) {

@@ -8,9 +8,7 @@ import { GetAllVideoController } from "./controllers/GetAllVideoController";
 import { resolveModuleName } from "typescript";
 
 const routes = Router();
-routes.get("/",(res:Response,  req:Request)=>{
-    throw new Error('caiu no Erro')
-})
+
 routes.post("/categories", new createCategoryController().handle);
 routes.get("/categories",new GetAllCategoryController().handle)
 routes.delete("/categories/:id",new DeleteCategoryController().handle)
